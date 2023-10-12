@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineHtml5 } from "react-icons/ai";
 import Modal from "./Modal";
 import {
@@ -11,7 +11,12 @@ import {
   BiLogoSpringBoot,
 } from "react-icons/bi";
 import styled from "styled-components";
-import logo from '../img/Logo.jpg';
+import project4 from '../img/Logo.jpg';
+import project1 from '../img/produce32.png'
+import project2 from '../img/HotDog-Logo.png';
+import project3 from '../img/Todo.jpg';
+import prepare from '../img/Prepare.jpg';
+
 
 const MainTitleFont = styled.h1`
   margin-left: 5%;
@@ -98,6 +103,7 @@ const PortfolioCard = styled.div`
   }
 `;
 
+
 export default function Main() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -114,16 +120,19 @@ export default function Main() {
   };
 
   const portfolioItems = [
-    { title: "Produce 32", content: "이상형 월드컵 게임 서비스",logo:logo,},
-    { title: "Hot_dog", content: "견주 커뮤니티 사이트" },
-    { title: "TODOLIST", content: "TODOLIST mini project" },
-    { title: "Project 2", content: "Description for Project 2" },
-    { title: "Project 2", content: "Description for Project 2" },
-    { title: "Project 2", content: "Description for Project 2" }
+    { title: "Produce 32", content: "이상형 월드컵 게임 서비스",logo:project1,},
+    { title: "Hot_dog", content: "견주 커뮤니티 사이트" ,logo:project2},
+    { title: "TODOLIST", content: "TODOLIST mini project",logo:project3 },
+    { title: "Mycareer", content: "React Portfolio web app",logo:project4 },
+    { title: "준비중...", content: "준비중...",logo:prepare },
+    { title: "준비중...", content: "준비중...",logo:prepare }
   ];
 
   return (
     <>
+      <div id="About me">
+      <MainTitleFont>About me</MainTitleFont>
+      </div>
       <div id="skills">
         <MainTitleFont>Skills</MainTitleFont>
         <FBskills>Frontend Skills</FBskills>
@@ -168,7 +177,7 @@ export default function Main() {
         <PortfolioSection>
           {portfolioItems.map((item, index) => (
             <PortfolioCard key={index} onClick={()=>handleOpenModal(item)}>
-            <img src={logo} alt="Logo" />
+            <img src={item.logo} alt="Logo" />
               <h3>{item.title}</h3>
               <p>{item.content}</p>
             </PortfolioCard>

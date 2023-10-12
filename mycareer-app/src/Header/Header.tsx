@@ -48,7 +48,24 @@ export default function Header() {
   const handleLogo = () => {
     window.location.reload();
   };
-
+  const handleContact=()=>{
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+  const handlePortfolio=()=>{
+    const portfolioSection=document.getElementById('portfolio')
+    if(portfolioSection){
+      portfolioSection.scrollIntoView({behavior:'smooth'})
+    }
+  }
+  const handleSkills=()=>{
+    const skillsSection=document.getElementById('skills')
+    if(skillsSection){
+      skillsSection.scrollIntoView({behavior:'smooth'})
+    }
+  }
   return (
     <Navbar>
       <Logo onClick={handleLogo}>
@@ -57,13 +74,16 @@ export default function Header() {
       <nav>
         <NavList>
           <NavItem>
-            <NavLink href="#project">About me</NavLink>
+            <NavLink href="#About me">About me</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#skills">skills</NavLink>
+            <NavLink href="#skills" onClick={handleSkills}>skills</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#contact">Portfolio</NavLink>
+            <NavLink href="#Portfolio" onClick={handlePortfolio}>Portfolio</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#contact" onClick={handleContact}>contact</NavLink>
           </NavItem>
         </NavList>
       </nav>
