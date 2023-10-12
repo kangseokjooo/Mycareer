@@ -6,9 +6,9 @@ const Navbar = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #f0f0f0; /* Set your preferred light background color here */
-  border-top: 2px solid #000000; /* Set your preferred light border color here */
-  border-bottom: 2px solid #000000; /* Set your preferred light border color here */
+  background-color: white; 
+  border-top: 2px solid #000000; 
+  border-bottom: 2px solid #000000; 
   border-radius: 5px;
 `;
 
@@ -16,7 +16,7 @@ const Logo = styled.div`
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  color: #000000; /* Set your preferred light text color here */
+  color: #000000; 
   img {
     width: 100px; 
     height: auto;
@@ -37,19 +37,14 @@ const NavItem = styled.li`
 
 const NavLink = styled.a`
   text-decoration: none;
-  color: #000000; /* Set your preferred light text color here */
+  color: #000000; 
   &:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
 `;
 
-export default function Header({ onThemeChange }: any) {
-  const handleThemeChange = (event: any) => {
-    const selectedTheme = event.target.value;
-    onThemeChange(selectedTheme);
-  };
-
+export default function Header() {
   const handleLogo = () => {
     window.location.reload();
   };

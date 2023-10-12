@@ -5,11 +5,11 @@ const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Set your preferred light background color here */
-  color: #000000; /* Set your preferred light text color here */
+  background-color: white; 
+  color: #000000; 
   height: 150px;
-  border-top: 2px solid #000000; /* Set your preferred light border color here */
-  border-bottom: 2px solid #000000; /* Set your preferred light border color here */
+  border-top: 2px solid #000000; 
+  border-bottom: 2px solid #000000; 
   border-radius: 5px;
 `;
 

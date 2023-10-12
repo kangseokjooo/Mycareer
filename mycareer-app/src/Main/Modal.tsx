@@ -29,11 +29,12 @@ const CloseButton = styled.button`
   align-self: flex-end; 
 `;
 
-const Modal = ({ isOpen, onClose, title, content }:{
+const Modal = ({ isOpen, onClose, title, content, logo }:{
     isOpen:boolean,
     onClose:()=>void,
     title:string,
     content:string,
+    logo:any
 }) => {
   if (!isOpen) return null;
 
@@ -41,6 +42,7 @@ const Modal = ({ isOpen, onClose, title, content }:{
     <ModalContainer>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>X</CloseButton>
+        <img src={logo}></img>
         <h3>{title}</h3>
         <p>{content}</p>
       </ModalContent>

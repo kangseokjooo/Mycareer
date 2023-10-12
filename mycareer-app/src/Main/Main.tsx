@@ -114,9 +114,9 @@ export default function Main() {
   };
 
   const portfolioItems = [
-    { title: "Project 1", content: "Description for Project 1" },
-    { title: "Project 2", content: "Description for Project 2" },
-    { title: "Project 2", content: "Description for Project 2" },
+    { title: "Produce 32", content: "이상형 월드컵 게임 서비스",logo:logo,},
+    { title: "Hot_dog", content: "견주 커뮤니티 사이트" },
+    { title: "TODOLIST", content: "TODOLIST mini project" },
     { title: "Project 2", content: "Description for Project 2" },
     { title: "Project 2", content: "Description for Project 2" },
     { title: "Project 2", content: "Description for Project 2" }
@@ -180,6 +180,7 @@ export default function Main() {
         onClose={handleCloseModal}
         title={selectedProject ? selectedProject.title : ''}
         content={selectedProject ? selectedProject.content : ''}
+        logo={selectedProject ? selectedProject.logo:null}
       />
     </>
   );
