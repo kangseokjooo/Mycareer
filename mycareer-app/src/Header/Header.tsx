@@ -66,6 +66,12 @@ export default function Header() {
       skillsSection.scrollIntoView({behavior:'smooth'})
     }
   }
+  const handleAbout=()=>{
+    const aboutSection=document.getElementById('About me')
+    if(aboutSection){
+      aboutSection.scrollIntoView({behavior:'smooth'})
+    }
+  }
   return (
     <Navbar>
       <Logo onClick={handleLogo}>
@@ -74,7 +80,7 @@ export default function Header() {
       <nav>
         <NavList>
           <NavItem>
-            <NavLink href="#About me">About me</NavLink>
+            <NavLink href="#About me" onClick={handleAbout}>About me</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#skills" onClick={handleSkills}>skills</NavLink>
