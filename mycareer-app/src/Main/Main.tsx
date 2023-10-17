@@ -48,7 +48,6 @@ const MainSkillWrap = styled.div`
     margin-top: 20px;
     border-radius: 10px;
     border: 1px solid black;
-    cursor: pointer;
     display: flex;
     align-items: center;
     transition: background-color 0.3s, transform 0.3s;
@@ -100,13 +99,13 @@ const skillIcons: any = {
 
 const PortfolioSection = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   margin: 20px;
+  justify-content :center ;
 `;
 
 const PortfolioCard = styled.div`
-  width: 250px;
+  width: calc(33.33% - 20px); 
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
@@ -117,26 +116,32 @@ const PortfolioCard = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
   @media (max-width: 768px) {
-    width: 220px;
+    width: 50%; 
   }
 `;
 const AboutMeWrap = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
 `;
 
 const AboutmeInfo = styled.div`
-  border-bottom: 1px solid black;
-  border-radius: 3px;
-  width: 40%;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%; 
   text-align: center;
   padding: 20px;
+  margin-bottom: 20px;
 `;
-
+const ContentPtag=styled.p`
+  font-size: larger;
+  @media (max-width: 768px){
+    font-size: medium;
+  }
+`
 export default function Main() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -155,39 +160,40 @@ export default function Main() {
   const portfolioItems = [
     {
       title: "Produce 32",
-      content: "이상형 월드컵 게임 서비스",
+      content: "이상형 월드컵 게임 서비스(Frontend)",
       logo: project1,
-      tool: ["html", "javascript", "css", "netlify"],
+      tool: ["Html", "Javascript", "Css", "Netlify"],
       role: ["Footer제작", "Page 반응형"],
       url: "https://amazing-gingersnap-47354c.netlify.app",
     },
     {
-      title: "Hot_dog",
-      content: "견주 커뮤니티 사이트",
+      title: "HotDog",
+      content: "견주 커뮤니티 사이트(Frontend-Backend)",
       logo: project2,
-      tool: ["html", "javascript", "css", "node.js", "Aws", "CLOUDTYPE"],
+      tool: ["Html", "Javascript", "Css", "Node.js", "Aws", "CLOUDTYPE"],
       role: [
         "주제 선정",
         "마이페이지 구현",
         "로그인,로그아웃 구현",
         "게시판 댓글기능 구현",
+        "DB 관계도 구현"
       ],
       url: "https://port-0-kdt9-hotdog-iciy2almixca8s.sel5.cloudtype.app/",
     },
     {
       title: "TODOLIST",
-      content: "TODOLIST mini project(Github 레포지토리 첨부)",
+      content: "TODOLIST mini project(Github 레포지토리 첨부)(Frontend-Backend)",
       logo: project3,
       tool: ["React.js", "styled-components"],
-      role: ["Todolist 전체 구현"],
+      role: ["Todolist 기능 전체 구현"],
       url: "https://github.com/kangseokjooo/Todolistminiproject",
     },
     {
       title: "Mycareer",
-      content: "React Portfolio web app",
+      content: "개인 포트폴리오 사이트(Frontend)",
       logo: project4,
-      tool: [],
-      role: [],
+      tool: ["React.js",'TypeScript',"styled-components"],
+      role: ["Header,Footer,Main 컴포넌트 구현","전체 페이지 반응형"],
       url: "",
     },
     {
@@ -227,7 +233,7 @@ export default function Main() {
               <BsFillFilePersonFill style={{ fontSize: "24px" }} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ fontWeight: "900" }}>이름:</div>
-                <div style={{fontWeight:'900'}}>kang</div>
+                <div style={{fontWeight:'900'}}>강석주</div>
               </div>
             </AboutmeInfo>
             <AboutmeInfo>
@@ -251,8 +257,6 @@ export default function Main() {
                 <div style={{fontWeight:'900'}}>zpckq69@naver.com</div>
               </div>
             </AboutmeInfo>
-            <AboutmeInfo>1</AboutmeInfo>
-            <AboutmeInfo>1</AboutmeInfo>
           </AboutMeWrap>
         </div>
       </div>
@@ -340,7 +344,7 @@ export default function Main() {
             <PortfolioCard key={index} onClick={() => handleOpenModal(item)}>
               <img src={item.logo} alt="Logo" />
               <h3>{item.title}</h3>
-              <p>{item.content}</p>
+              <ContentPtag>{item.content}</ContentPtag>
             </PortfolioCard>
           ))}
         </PortfolioSection>

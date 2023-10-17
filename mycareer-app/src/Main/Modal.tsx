@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HiGlobeAlt } from "react-icons/hi";
+import { useState,useEffect } from "react";
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -16,27 +17,29 @@ const ModalContainer = styled.div`
 
 const ModalContent = styled.div`
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
-  width: 70%;
+  width: 80%;
   max-width: 800px;
-  height: 70%;
+  height: 80%;
   max-height: 600px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 `;
 
 const CloseButton = styled.button`
   background: none;
   border: none;
   font-size: 24px;
+  position:relative;
+  margin-left: 95%;
   cursor: pointer;
   align-self: flex-end;
+  color: gray;
 `;
 
 const ScrollableContent = styled.div`
+  color: #333;
 
   h1 {
     font-size: 36px;
@@ -46,7 +49,8 @@ const ScrollableContent = styled.div`
   img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
   }
 
   h2 {
@@ -59,6 +63,7 @@ const ScrollableContent = styled.div`
     margin-top: 20px;
     border-top: 1px solid #ccc;
     padding-top: 10px;
+    margin-bottom: 10px;
   }
 
   ul {
@@ -78,6 +83,10 @@ const ScrollableContent = styled.div`
     }
   }
 `;
+const VisitTitle=styled.span`
+  margin-bottom: 3%;
+`
+
 const Modal = ({
   isOpen,
   onClose,
@@ -97,35 +106,55 @@ const Modal = ({
   role: string[];
   url: string;
 }) => {
+  const [visitTitle, setvisitTitle] = useState('');
+  const [count, setCount] = useState(0);
+  const completionWord = 'Visit Website';
+
+  useEffect(() => {
+    const typingInterval = setInterval(() => {
+      setvisitTitle((prevTitleValue) => {
+        let result = prevTitleValue ? prevTitleValue + completionWord[count] : completionWord[0];
+        setCount(count + 1);
+
+        if (count >= completionWord.length) {
+          setCount(0);
+          setvisitTitle('');
+        }
+
+        return result;
+      });
+    }, 200);
+
+    return () => {
+      clearInterval(typingInterval);
+    };
+  });
   if (!isOpen) return null;
+  
 
   return (
-    <ModalContainer>
+    <ModalContainer onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>X</CloseButton>
         <ScrollableContent>
           <h1>{title}</h1>
-          <img src={logo}></img>
+          <img src={logo} alt="Logo" />
           <h2>{content}</h2>
           <h3>Stacks</h3>
           <ul>
-            {tool.map((value, idx) => {
-              return <li key={idx}>{value}</li>;
-            })}
+            {tool.map((value, idx) => (
+              <li key={idx}>{value}</li>
+            ))}
           </ul>
           <h3>Roles</h3>
           <ul>
-            {role.map((value, idx) => {
-              return <li key={idx}>{value}</li>;
-            })}
+            {role.map((value, idx) => (
+              <li key={idx}>{value}</li>
+            ))}
           </ul>
           <h3>Address</h3>
-          <a
-            href={url}
-            target="blanck"
-            style={{ color: "black", fontSize: "24px" }}
-          >
-            <HiGlobeAlt />
+          <a href={url} target="_blank" rel="noreferrer">
+          <VisitTitle><HiGlobeAlt/>{visitTitle}</VisitTitle>
           </a>
         </ScrollableContent>
       </ModalContent>

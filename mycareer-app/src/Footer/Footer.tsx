@@ -20,11 +20,17 @@ const MailFont = styled.div`
   line-height: 2;
   display: flex;
   align-items: center;
+  @media (max-width: 768px){
+    display: none;
+  }
 `;
 
 const ContactFont = styled.div`
   font-size: 24px;
   line-height: 1.2;
+  @media (max-width: 768px){
+    display: none;
+  }
 `;
 
 const GithubLink = styled.a`

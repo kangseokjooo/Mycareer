@@ -39,8 +39,17 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": ["src/Header/Header.tsx"],
+        "rules": {
+          "react/prop-types": "off"
+        }
+      }
     ]
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",
