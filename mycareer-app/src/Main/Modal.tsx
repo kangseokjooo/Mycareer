@@ -123,7 +123,7 @@ const Modal = ({
 
         return result;
       });
-    }, 200);
+    }, 300);
 
     return () => {
       clearInterval(typingInterval);
