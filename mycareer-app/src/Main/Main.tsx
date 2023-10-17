@@ -82,18 +82,18 @@ const FBskills = styled.div`
 `;
 
 const skillIcons: any = {
-  html: <AiOutlineHtml5 />,
-  css: <BiLogoCss3 />,
-  Reactjs: <BiLogoReact />,
-  Javascript: <BiLogoJavascript />,
-  Typescript: <BiLogoTypescript />,
-  nodejs: <BiLogoNodejs />,
-  Java: <BiLogoJava />,
-  Spring: <BiLogoSpringBoot />,
-  Mysql:<SiMysql/>,
+  html: <AiOutlineHtml5 style={{color:'orange'}}/>,
+  css: <BiLogoCss3 style={{color:'blue'}}/>,
+  Reactjs: <BiLogoReact style={{color:'skyblue'}}/>,
+  Javascript: <BiLogoJavascript style={{color:'#ffff00'}}/>,
+  Typescript: <BiLogoTypescript style={{color:'blue'}}/>,
+  nodejs: <BiLogoNodejs style={{color:'lightgreen'}}/>,
+  Java: <BiLogoJava style={{color:'red'}}/>,
+  Spring: <BiLogoSpringBoot style={{color:'lightgreen'}}/>,
+  Mysql:<SiMysql style={{color:'blue'}}/>,
   AWS: <BiLogoAws />,
-  netify: <BiLogoNetlify />,
-  Git: <FaGitSquare />,
+  netify: <BiLogoNetlify style={{color:'turquoise'}}/>,
+  Git: <FaGitSquare style={{color:'#df4844'}}/>,
   GitHub: <BsGithub />,
 };
 

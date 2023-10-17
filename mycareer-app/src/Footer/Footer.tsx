@@ -55,7 +55,7 @@ export default function Footer() {
         :zpckq69@naver.com
       </MailFont>
       <div>
-        <GithubLink href="https://github.com/kangseokjooo?tab=repositories" target='blank'>
+        <GithubLink href="https://github.com/kangseokjooo?tab=repositories" target='blank' rel='noreferrer'>
           <GitHubIcon><BsGithub /></GitHubIcon>
         </GithubLink>
       </div>
