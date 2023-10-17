@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { HiGlobeAlt } from "react-icons/hi";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -31,11 +31,16 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   font-size: 24px;
-  position:relative;
+  position: relative;
   margin-left: 95%;
   cursor: pointer;
   align-self: flex-end;
-  color: gray;
+  color: #555;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #e74c3c;
+  }
 `;
 
 const ScrollableContent = styled.div`
@@ -44,6 +49,7 @@ const ScrollableContent = styled.div`
   h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    color: #333;
   }
 
   img {
@@ -56,6 +62,7 @@ const ScrollableContent = styled.div`
   h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #333;
   }
 
   h3 {
@@ -64,6 +71,7 @@ const ScrollableContent = styled.div`
     border-top: 1px solid #ccc;
     padding-top: 10px;
     margin-bottom: 10px;
+    color: #333;
   }
 
   ul {
@@ -71,21 +79,32 @@ const ScrollableContent = styled.div`
     margin-left: 20px;
     font-size: 18px;
     margin-bottom: 10px;
+    color: #333;
   }
 
   a {
-    color: black;
+    color: #3498db;
     font-size: 24px;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
-      text-decoration: underline;
+      color: #2980b9;
     }
   }
 `;
-const VisitTitle=styled.span`
+
+const VisitTitle = styled.span`
   margin-bottom: 3%;
-`
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+
+  svg {
+    margin-right: 10px;
+  }
+`;
 
 const Modal = ({
   isOpen,
@@ -129,8 +148,8 @@ const Modal = ({
       clearInterval(typingInterval);
     };
   });
+
   if (!isOpen) return null;
-  
 
   return (
     <ModalContainer onClick={onClose}>
@@ -154,7 +173,9 @@ const Modal = ({
           </ul>
           <h3>Address</h3>
           <a href={url} target="_blank" rel="noreferrer">
-          <VisitTitle><HiGlobeAlt/>{visitTitle}</VisitTitle>
+            <VisitTitle>
+              <HiGlobeAlt /> {visitTitle}
+            </VisitTitle>
           </a>
         </ScrollableContent>
       </ModalContent>
