@@ -194,7 +194,7 @@ export default function Main() {
       logo: project4,
       tool: ["React.js",'TypeScript',"styled-components"],
       role: ["Header,Footer,Main 컴포넌트 구현","전체 페이지 반응형"],
-      url: "",
+      url: "https://web-mycareer-euegqv2blnvcf1mf.sel5.cloudtype.app/",
     },
     {
       title: "준비중...",
