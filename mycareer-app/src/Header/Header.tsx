@@ -86,6 +86,9 @@ const NavLink = styled.a`
 
 export default function Header() {
   const [menuopen, setmenuopen] = useState(false);
+  const handleLogo=()=>{
+    window.location.reload();
+  }
 
   const handleMenuToggle = () => {
     console.log(menuopen);
@@ -122,7 +125,7 @@ export default function Header() {
 
   return (
     <Navbar>
-      <Logo>
+      <Logo onClick={handleLogo}>
         <img src={logo} alt="Logo" />
       </Logo>
       <HamburgerIcon onClick={handleMenuToggle}>☰</HamburgerIcon>
