@@ -118,7 +118,7 @@ const PortfolioCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 30%;
   }
 `;
 const AboutMeWrap = styled.div`
