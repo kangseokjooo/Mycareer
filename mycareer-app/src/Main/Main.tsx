@@ -14,18 +14,18 @@ import {
 } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
 import { GoProjectRoadmap } from "react-icons/go";
-import { BsLink45Deg, BsGithub,BsFillFilePersonFill } from "react-icons/bs";
-import { FaGitSquare} from "react-icons/fa";
-import {IoLocationSharp} from 'react-icons/io5'
-import {SiMysql} from 'react-icons/si'
+import { BsLink45Deg, BsGithub, BsFillFilePersonFill } from "react-icons/bs";
+import { FaGitSquare } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+import { SiMysql } from "react-icons/si";
 import styled from "styled-components";
 import project4 from "../img/Logo.jpg";
 import project1 from "../img/produce32.png";
 import project2 from "../img/HotDog-Logo.png";
 import project3 from "../img/Todo.jpg";
 import prepare from "../img/Prepare.jpg";
-import {LiaBirthdayCakeSolid} from 'react-icons/lia'
-import { AiOutlineMail } from 'react-icons/ai';
+import { LiaBirthdayCakeSolid } from "react-icons/lia";
+import { AiOutlineMail } from "react-icons/ai";
 
 const MainTitleFont = styled.h1`
   margin-left: 2%;
@@ -82,18 +82,18 @@ const FBskills = styled.div`
 `;
 
 const skillIcons: any = {
-  html: <AiOutlineHtml5 style={{color:'orange'}}/>,
-  css: <BiLogoCss3 style={{color:'blue'}}/>,
-  Reactjs: <BiLogoReact style={{color:'skyblue'}}/>,
-  Javascript: <BiLogoJavascript style={{color:'#ffff00'}}/>,
-  Typescript: <BiLogoTypescript style={{color:'blue'}}/>,
-  nodejs: <BiLogoNodejs style={{color:'lightgreen'}}/>,
-  Java: <BiLogoJava style={{color:'red'}}/>,
-  Spring: <BiLogoSpringBoot style={{color:'lightgreen'}}/>,
-  Mysql:<SiMysql style={{color:'blue'}}/>,
+  html: <AiOutlineHtml5 style={{ color: "orange" }} />,
+  css: <BiLogoCss3 style={{ color: "blue" }} />,
+  Reactjs: <BiLogoReact style={{ color: "skyblue" }} />,
+  Javascript: <BiLogoJavascript style={{ color: "#ffff00" }} />,
+  Typescript: <BiLogoTypescript style={{ color: "blue" }} />,
+  nodejs: <BiLogoNodejs style={{ color: "lightgreen" }} />,
+  Java: <BiLogoJava style={{ color: "red" }} />,
+  Spring: <BiLogoSpringBoot style={{ color: "lightgreen" }} />,
+  Mysql: <SiMysql style={{ color: "blue" }} />,
   AWS: <BiLogoAws />,
-  netify: <BiLogoNetlify style={{color:'turquoise'}}/>,
-  Git: <FaGitSquare style={{color:'#df4844'}}/>,
+  netify: <BiLogoNetlify style={{ color: "turquoise" }} />,
+  Git: <FaGitSquare style={{ color: "#df4844" }} />,
   GitHub: <BsGithub />,
 };
 
@@ -101,11 +101,11 @@ const PortfolioSection = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
-  justify-content :center ;
+  justify-content: center;
 `;
 
 const PortfolioCard = styled.div`
-  width: calc(33.33% - 20px); 
+  width: calc(33.33% - 20px);
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
@@ -118,30 +118,48 @@ const PortfolioCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 50%; 
+    width: 50%;
   }
 `;
 const AboutMeWrap = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
-  width: 100%; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-left: 5%;
+  @media (max-width:768px){
+    height: 80%;
+  }
+`;
+
+const MyImage = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: lightgray;
+  opacity: 0.3;
 `;
 
 const AboutmeInfo = styled.div`
   border: 1px solid black;
   border-radius: 10px;
-  width: 80%; 
+  width: 80%;
   text-align: center;
   padding: 20px;
   margin-bottom: 20px;
 `;
-const ContentPtag=styled.p`
+const ContentPtag = styled.p`
   font-size: larger;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: medium;
   }
-`
+`;
+
 export default function Main() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -176,13 +194,14 @@ export default function Main() {
         "마이페이지 구현",
         "로그인,로그아웃 구현",
         "게시판 댓글기능 구현",
-        "DB 관계도 구현"
+        "DB 관계도 구현",
       ],
       url: "https://port-0-kdt9-hotdog-iciy2almixca8s.sel5.cloudtype.app/",
     },
     {
       title: "TODOLIST",
-      content: "TODOLIST mini project(Github 레포지토리 첨부)(Frontend-Backend)",
+      content:
+        "TODOLIST mini project(Github 레포지토리 첨부)(Frontend-Backend)",
       logo: project3,
       tool: ["React.js", "styled-components"],
       role: ["Todolist 기능 전체 구현"],
@@ -192,8 +211,8 @@ export default function Main() {
       title: "Mycareer",
       content: "개인 포트폴리오 사이트(Frontend)",
       logo: project4,
-      tool: ["React.js",'TypeScript',"styled-components"],
-      role: ["Header,Footer,Main 컴포넌트 구현","전체 페이지 반응형"],
+      tool: ["React.js", "TypeScript", "styled-components"],
+      role: ["Header,Footer,Main 컴포넌트 구현", "전체 페이지 반응형"],
       url: "https://web-mycareer-euegqv2blnvcf1mf.sel5.cloudtype.app/",
     },
     {
@@ -221,44 +240,41 @@ export default function Main() {
           <BsLink45Deg />
           About me
         </MainTitleFont>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "row",
-          }}
-        >
-          <AboutMeWrap>
+        <AboutMeWrap>
+          <MyImage>
+            <div>Your image</div>
+          </MyImage>
+          <div style={{ textAlign: "left" }}>
             <AboutmeInfo>
               <BsFillFilePersonFill style={{ fontSize: "24px" }} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ fontWeight: "900" }}>이름:</div>
-                <div style={{fontWeight:'900'}}>강석주</div>
+                <div style={{ fontWeight: "900" }}>강석주</div>
               </div>
             </AboutmeInfo>
             <AboutmeInfo>
-            <LiaBirthdayCakeSolid style={{ fontSize: "24px" }} />
+              <LiaBirthdayCakeSolid style={{ fontSize: "24px" }} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ fontWeight: "900" }}>생년월일:</div>
-                <div style={{fontWeight:'900'}}>96.08.17</div>
+                <div style={{ fontWeight: "900" }}>96.08.17</div>
               </div>
             </AboutmeInfo>
             <AboutmeInfo>
-            <IoLocationSharp style={{ fontSize: "24px" }} />
+              <IoLocationSharp style={{ fontSize: "24px" }} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ fontWeight: "900" }}>주소지:</div>
-                <div style={{fontWeight:'900'}}>경기도 고양시 일산서구</div>
+                <div style={{ fontWeight: "900" }}>경기도 고양시 일산서구</div>
               </div>
             </AboutmeInfo>
             <AboutmeInfo>
-            <AiOutlineMail style={{ fontSize: "24px" }} />
+              <AiOutlineMail style={{ fontSize: "24px" }} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ fontWeight: "900" }}>메일:</div>
-                <div style={{fontWeight:'900'}}>zpckq69@naver.com</div>
+                <div style={{ fontWeight: "900" }}>zpckq69@naver.com</div>
               </div>
             </AboutmeInfo>
-          </AboutMeWrap>
-        </div>
+          </div>
+        </AboutMeWrap>
       </div>
       <div id="skills">
         <MainTitleFont>
@@ -286,7 +302,7 @@ export default function Main() {
 
         <FBskills>Backend Skills</FBskills>
         <MainSkillWrap>
-          {["nodejs", "Java", "Spring","Mysql"].map((skill) => (
+          {["nodejs", "Java", "Spring", "Mysql"].map((skill) => (
             <div
               key={skill}
               onMouseEnter={() => setSelectedSkill(skill)}
