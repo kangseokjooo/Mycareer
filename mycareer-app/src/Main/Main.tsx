@@ -11,6 +11,7 @@ import {
   BiLogoSpringBoot,
   BiLogoAws,
   BiLogoNetlify,
+  BiLogoDocker
 } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
 import { GoProjectRoadmap } from "react-icons/go";
@@ -24,6 +25,7 @@ import project1 from "../img/produce32.png";
 import project2 from "../img/HotDog-Logo.png";
 import project3 from "../img/Todo.jpg";
 import prepare from "../img/Prepare.jpg";
+import project5 from "../img/project5.png";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { AiOutlineMail } from "react-icons/ai";
 
@@ -95,6 +97,7 @@ const skillIcons: any = {
   netify: <BiLogoNetlify style={{ color: "turquoise" }} />,
   Git: <FaGitSquare style={{ color: "#df4844" }} />,
   GitHub: <BsGithub />,
+  Docker:<BiLogoDocker style={{color:"blue"}}/>
 };
 
 const PortfolioSection = styled.div`
@@ -196,7 +199,7 @@ export default function Main() {
         "게시판 댓글기능 구현",
         "DB 관계도 구현",
       ],
-      url: "https://port-0-kdt9-hotdog-iciy2almixca8s.sel5.cloudtype.app/",
+      url: "https://github.com/applicants-backend/kdt9_HotDog",
     },
     {
       title: "TODOLIST",
@@ -216,12 +219,12 @@ export default function Main() {
       url: "https://web-mycareer-euegqv2blnvcf1mf.sel5.cloudtype.app/",
     },
     {
-      title: "준비중...",
-      content: "준비중...",
-      logo: prepare,
-      tool: [],
-      role: [],
-      url: "",
+      title: "소규모 사업장 관리 플랫폼",
+      content: "소규모사업장 관리플랫폼[react-SpringBoot] TestId,TestPw[admin1,admin123!]",
+      logo: project5,
+      tool: ["Springboot","JPA","SpringSecurity","Swagger"],
+      role: ["member RestApi","SpringSecurity","Payment RestApi","Swagger"],
+      url: "http://ec2-3-35-58-201.ap-northeast-2.compute.amazonaws.com/",
     },
     {
       title: "준비중...",
@@ -318,7 +321,7 @@ export default function Main() {
         </MainSkillWrap>
         <FBskills>Deployment</FBskills>
         <MainSkillWrap>
-          {["AWS", "netify"].map((skill) => (
+          {["AWS", "netify","Docker"].map((skill) => (
             <div
               key={skill}
               onMouseEnter={() => setSelectedSkill(skill)}
