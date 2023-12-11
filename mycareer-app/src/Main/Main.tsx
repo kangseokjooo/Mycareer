@@ -220,7 +220,7 @@ export default function Main() {
     },
     {
       title: "소규모 사업장 관리 플랫폼",
-      content: "소규모사업장 관리플랫폼[react-SpringBoot] TestId,TestPw[admin1,admin123!]",
+      content: "소규모사업장 관리플랫폼[react-SpringBoot]",
       logo: project5,
       tool: ["Springboot","JPA","SpringSecurity","Swagger"],
       role: ["member RestApi","SpringSecurity","Payment RestApi","Swagger"],
